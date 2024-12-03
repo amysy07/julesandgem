@@ -69,9 +69,9 @@ CSS TABLE OF CONTENTS
     --color-siteheader-background: transparent;
     --color-siteheader-links: var(--color-text-headings);
 
-    --color-hero-background: rgb(172, 172, 172);
+    --color-hero-background: white;
     --color-hero-text: rgb(255 255 255 / .8);
-    --color-hero-headings: rgb(255 255 255 / 1);
+    --color-hero-headings: rgb(0, 0, 0);
 
     --color-sitefooter-background: #998D6F;
     --color-sitefooter-text: rgb(255 255 255 / .8);
@@ -159,7 +159,7 @@ h5 {
 
 /* SET H1 FONT SIZE AND LEADING */
 h1 {
-    font-size: 2.5em;
+    font-size: 2.3em;
     line-height: 1.1;
 }
 
@@ -564,7 +564,7 @@ section {
     color: var(--color-hero-text);
 
     h1 {
-        font-size: 4em;
+        font-size: 3em;
         line-height: 1;
         text-wrap: balance;
     }
@@ -723,6 +723,7 @@ a:hover:before {
     .centered-card {
         border: 1px solid #ccc;
         border-radius: 10px;
+        background-color: #E7C4A8;
         padding: var(--unit-small);
         /* min-width: 200px; */
         max-width: 250px;
@@ -852,26 +853,27 @@ html {
 .page-home {
     .heroimage {
         text-align: center;
-        animation: candleimageshrink 3s forwards 0s;
+        animation: candleimageshrink 3s forwards 0s;        
     }
 
     .parting-flowers {
         position: relative;
         overflow: hidden;
+        scale: 100%;
         .observe-me:has(.h1-center) {
         background: transition-delay 2s;
     }
 
         &:before {
             content: "left";
-            width: 50%;
+            width: 100%;
             height: 100%;
-            background-color: yellow;
+            background-image: url("../img/floralillustration_hero_left.png");
             position: absolute;
             top: 0;
             left: 0;
             z-index: 50;
-            animation: partingflowersleft 2s ease-out forwards;
+            animation: partingflowersleft 4s ease-out forwards;
         }
 
         &:after {
@@ -883,7 +885,7 @@ html {
             top: 0;
             right: 0;
             z-index: 50;
-            animation: partingflowersright 2s ease-out forwards;
+            animation: partingflowersright 4s ease-out forwards;
         }
     }
 }
@@ -929,3 +931,40 @@ html {
     background-position: center; 
     background-repeat: no-repeat;
 }
+
+.hover-wrapper{
+    height: 70vh;
+  display: flex;
+  margin: auto;
+}
+
+.hover-img-box{
+    height: 300px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
+
+.hover-image1{
+    border-radius: 1rem;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+
+.hover-image2{
+    position: absolute;
+    border-radius: 1rem;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.hover-img-box:hover .hover-image1{
+  opacity: 0;
+}
+
+.hover-img-box:hover .hover-image2{
+   opacity: 100%;
+}
+
